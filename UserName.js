@@ -19,10 +19,13 @@ const rl = readline.createInterface({
 *username() declaretion 
 */
 function username(){
-    var str='Hello %s!! How are you??';
+    var str='Hello <<userinput>>!! How are you??';
+    //var str='Hello %s!! How are you??';
     rl.question('Enter your user-name :\n', function(userinput) {
-        if(userinput.length>3)
-            console.log(str,userinput);
+        if(userinput.length>3){
+        //    console.log(str,userinput);
+            console.log(str.replace(/<<userinput>>/,userinput));
+        }
         else
             console.log('user-name should contain more than 3 characters. ' )
       rl.close();
